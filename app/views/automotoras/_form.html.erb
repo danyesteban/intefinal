@@ -1,0 +1,41 @@
+<%= form_for(@automotora) do |f| %>
+  <% if @automotora.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@automotora.errors.count, "error") %> prohibited this automotora from being saved:</h2>
+
+      <ul>
+      <% @automotora.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :codigo %><br>
+    <%= f.text_field :codigo %>
+  </div>
+  <div class="field">
+    <%= f.label :marca %><br>
+    <%= f.text_field :marca %>
+  </div>
+  <div class="field">
+    <%= f.label :precio %><br>
+    <%= f.number_field :precio %>
+  </div>
+  <div class="field">
+    <%= f.label :modelo %><br>
+    <%= f.text_field :modelo %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :usuario_id %><br>
+    <%= f.select( "usuario_id",Usuario.all.collect{|l| [ l.nombre, l.id ] }, {include_blanck: 'seleccione Usuario'}) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

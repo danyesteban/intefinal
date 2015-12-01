@@ -1,0 +1,35 @@
+<h1>Listing automotoras</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Codigo</th>
+      <th>Marca</th>
+      <th>Precio</th>
+      <th>Modelo</th>
+      <th>Color</th>
+      <th>Usuario</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @automotoras.each do |automotora| %>
+      <tr>
+        <td><%= automotora.codigo %></td>
+        <td><%= automotora.marca %></td>
+        <td><%= automotora.precio %></td>
+        <td><%= automotora.modelo %></td>
+        <td><%= automotora.color %></td>
+        <td><%= automotora.usuario.nombre %></td>
+        <td><%= link_to 'Show', automotora %></td>
+        <td><%= link_to 'Edit', edit_automotora_path(automotora) %></td>
+        <td><%= link_to 'Destroy', automotora, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Automotora', new_automotora_path %>

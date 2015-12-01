@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @automotora.codigo %>
+</p>
+
+<p>
+  <strong>Marca:</strong>
+  <%= @automotora.marca %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @automotora.precio %>
+</p>
+
+<p>
+  <strong>Modelo:</strong>
+  <%= @automotora.modelo %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @automotora.color %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @automotora.usuario.nombre %>
+</p>
+
+<%= link_to 'Edit', edit_automotora_path(@automotora) %> |
+<%= link_to 'Back', automotoras_path %>
